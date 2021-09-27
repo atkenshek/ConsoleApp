@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <random>
 #include <time.h>
 #include "Person.h"
 using namespace std;
@@ -31,7 +30,7 @@ void fillVector(vector<Person>& newPerson){
         cout << endl;
     }
     cout<< endl;
-};
+}
 void printVector(const vector<Person>& newPerson){
     for (int i = 0; i < newPerson.size(); ++i) {
         cout << "Person name: " + newPerson.at(i).getName() << endl;
@@ -39,7 +38,7 @@ void printVector(const vector<Person>& newPerson){
         cout << "Person luck: " + newPerson.at(i).getLuck() << endl;
         cout << endl;
     }
-};
+}
 Person findLuckiest(const vector<Person>& newPerson){
     int max = 0;
     Person tempPerson = Person();
@@ -62,11 +61,24 @@ int main() {
     fillVector(persons);
     printVector(persons);
     Person luckiest = findLuckiest(persons);
-    cout<<"The luckiest one is: "<<luckiest.getName()<<". With value: "<<luckiest.getLuck();
+    cout<<"The luckiest one is: "<<luckiest.getName();
 
     changeLuck(persons.at(0), persons.at(1));
     cout<<"\nAfter swapping Luck values"<<endl;
     printVector(persons);
     return 0;
+
+
+//    vector<Person> newPerson;                            //cache-friendly
+//    //vs
+//    list<Person> newPerson;                              //cache-unfriendly
+
+//    long sum = 0;                                           //example of cache-unfriendly code
+//    long arr[INT_MAX][INT_MAX];
+//    for (int j = 0; j<INT_MAX;j++){
+//        for (int i=0; i<INT_MAX; i++){
+//            sum+=arr[i][j];
+//        }
+//    }
 }
 
