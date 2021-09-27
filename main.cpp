@@ -57,20 +57,19 @@ void changeLuck(Person& person1, Person& person2){
     person2.setLuck(tempLuck);
 }
 int main() {
-    vector <Person> persons;
+    vector<Person> persons;
     fillVector(persons);
     printVector(persons);
     Person luckiest = findLuckiest(persons);
-    cout<<"The luckiest one is: "<<luckiest.getName();
+    cout << "The luckiest one is: " << luckiest.getName();
 
     changeLuck(persons.at(0), persons.at(1));
-    cout<<"\nAfter swapping Luck values"<<endl;
+    cout << "\nAfter swapping Luck values" << endl;
     printVector(persons);
     return 0;
 
 
 //    vector<Person> newPerson;                            //cache-friendly
-//    //vs
 //    list<Person> newPerson;                              //cache-unfriendly
 
 //    long sum = 0;                                           //example of cache-unfriendly code
@@ -80,5 +79,43 @@ int main() {
 //            sum+=arr[i][j];
 //        }
 //    }
-}
 
+//                                                  using the extern keyword by С language
+//                 This comes in useful when you have global variables.
+// if we have header
+// #ifndef HEADER_H
+// #define HEADER_H
+//                                      any source file that includes this will be able to use "global_x"
+//  extern int global_x;
+//  void print_global_x();
+
+//#endif
+//class1
+//#include "header.h"
+
+// since global_x still needs to be defined somewhere,
+// we define it (for example) in this source file
+//    int global_x;
+
+//    int main()
+//    {
+    //set global_x here:
+//        global_x = 5;
+
+//        print_global_x();
+//    }
+
+//#include <iostream>
+//#include "header.h"
+
+//    void print_global_x()
+//    {
+        //print global_x here:
+//        std::cout << global_x << std::endl;
+//    }
+
+
+
+
+
+}
