@@ -7,44 +7,30 @@
 
 #include <iostream>
 #include <string>
-#include "time.h"
-#include <stdlib.h>
-
 using namespace std;
-class Person {
+class Person{
+private:
+    string name;
+    int age;
+    int luck;
 public:
-    //Default constructor
+    Person(const string &name, int age, int luck);
+
+    Person(const string &name);
+
     Person();
-    //Overload Constructor
-    Person(string name, int age, int luck);
-    //Destructor
-    ~Person();
 
     const string &getName() const;
 
-    void setName(string name);
-
     int getAge() const;
-
-    void setAge(int age);
 
     int getLuck() const;
 
+    void setName(const string &name);
+
+    void setAge(int age);
+
     void setLuck(int luck);
-
-
-private:
-    string newName;
-    int newAge;
-    int newLuck;
-
-    /* initialize random seed: */
-
-
-    /* generate secret number between 1 and 10: */
-
-
-
 };
 
 
